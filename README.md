@@ -9,3 +9,5 @@ I have organized the model across three modules.
 	3.	FL_task.py: This module contains core functionalities for model architecture and data handling. It defines a simple CNN model and includes functions for loading and partitioning data, training, and testing. Utilizing the FederatedDataset library, it manages data preprocessing and transformation, ensuring effective model training and evaluation in a federated setup.
 
 Together, these modules enable the development and deployment of a federated learning system, facilitating collaborative model training while preserving data privacy.
+
+I have used FedAvg (federated averaging strategy) in the model where each device (called a client) trains its own version of the model using the data it has and after training, each client sends its model (not the data) back to a central server. The server then combines these models by averaging them together. The average is weighted against the data on which it was trained, meaning that if a client has more data, its model has a bigger influence on the final result.
